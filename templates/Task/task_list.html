@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block title %}{% trans 'Llistat de taskes' %}{% endblock %}
+
+
+{% block content %}
+
+
+<h3>Hola diables</h3>
+<h5>Events actius</h5>
+
+
+<ul>
+{% for ev in eventos %}
+    <li>{{ev}}: {{ev.desc|truncatechars:25}}</li>
+    <ul>
+    {% for t in ev.tasks %}
+        <li>{{t}}: {{t.desc}}</li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+</ul>
+
+
+{% endblock %}

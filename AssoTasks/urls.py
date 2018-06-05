@@ -17,8 +17,15 @@ from django.contrib import admin
 from django.urls import path
 
 
+from Task import  views as Taskviews
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # ex: /polls/
+    path('', Taskviews.test  , name='task_index',),
+    # ex: /polls/5/
+    #path('<int:question_id>/', views.detail, name='detail'),
 
 ]
